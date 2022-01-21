@@ -10,5 +10,5 @@ Appologies in Advance.
 <p> and the logger is basically the Execution Log in its Editor or like a Output Screen or Window in Visual Studio
 <Note: Intellicense so far is quite good></p>
 <p>3- Sheetcontent file hase the script to access the content of an active sheet and show it to us on Execution log</P>
-  
+ <p>4- Sheet selection two methods of selecting a sheet or spreadsheet by its ID or URL </p>
   
