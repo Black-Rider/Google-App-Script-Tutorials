@@ -1,0 +1,32 @@
+
+//method 1 for getting sheet bu its URL
+function select2()
+{
+const url='https://docs.google.com/spreadsheets/d/1QHoU_6eMkBf8_4G2gknNb6Ma0YBQXhkdu77dnkJkUuw/';
+const ss=SpreadsheetApp.openByUrl(url);
+//const sheet = ss.getSheets()[0];
+//sheet.setName('First');
+const sheet=ss.getSheetByName('Updated1');
+//sheet.setName('Updated 100');
+if(sheet!=null)
+{
+Logger.log(sheet.getIndex());
+
+}
+}
+
+
+//method 2 for getting sheet by its unique ID
+
+function select() {
+  const id = '1QHoU_6eMkBf8_4G2gknNb6Ma0YBQXhkdu77dnkJkUuw';
+  const ss = SpreadsheetApp.openById(id);
+  const sheets= ss.getSheets();
+sheets.forEach((sheet,index)=>
+{
+  Logger.log(sheet.getName());
+  sheet.setName('Updated'+index);
+
+})
+  Logger.log(sheets);
+}
