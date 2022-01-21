@@ -1,0 +1,29 @@
+function addcolors()
+{
+const id='SpreadSheetID';
+const ss = SpreadsheetApp.openById(id);
+const sheet= ss.getSheets()[0];
+Logger.log(sheet.getName());
+let counter=0;
+for(let i=1;i<50;i++)
+{
+
+for(let x= 0;x<5;x++)
+{
+let val ='A'.charCodeAt()+x;
+let letterVal= String.fromCharCode(val);
+Logger.log(letterVal);
+  let backcolor='Blue';
+  counter+=1;
+  if((counter%2)==0){
+backcolor='pink';
+}
+else{backcolor='gold';}
+
+sheet.getRange(letterVal+i).setBackground(backcolor);
+}
+
+}
+
+
+}
