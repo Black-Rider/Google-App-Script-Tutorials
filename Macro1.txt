@@ -1,0 +1,27 @@
+For Creating a Macro in Spreadsheet 
+Go to Extensions as of 2022 Select Macros> Create Macros > record your Macros.> Save Them.
+Now Go to Manage Macros again From Extensions now Edit them:
+
+Now This Macros is Bound to the Spreadsheet I created it on.
+/** @OnlyCurrentDoc */
+
+function _1macro() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('A4').activate();
+  spreadsheet.getCurrentCell().setValue('Hello');
+  spreadsheet.getRange('B4').activate();
+  spreadsheet.getCurrentCell().setValue('World');
+  spreadsheet.getRange('E4').activate();
+  spreadsheet.getCurrentCell().setValue('Hello');
+ spreadsheet.getRange('E5').activate();
+ spreadsheet.getCurrentCell().setValue('World');
+  spreadsheet.getRange('A4:B4').activate();
+  spreadsheet.getActiveRangeList().setFontWeight('bold')
+  .setFontColor('ACCENT2')
+  .setBackground('ACCENT1');
+  spreadsheet.getRange('E4:E5').activate();
+  spreadsheet.getActiveRangeList().setFontWeight('bold')
+  .setFontColor('ACCENT2')
+  .setBackground('Gold');
+
+};
