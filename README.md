@@ -12,3 +12,4 @@ Appologies in Advance.
 <p>3- Sheetcontent file hase the script to access the content of an active sheet and show it to us on Execution log</P>
  <p>4- Sheet selection two methods of selecting a sheet or spreadsheet by its ID or URL </p>
 <p>5- sheetinasheet.txt file has method for creating sheet with a spreadsheet programatically.</P>  
+<p>6- checkerboard.txt has method of printing checkerboard pattern on sheet column by selecting range or getRange()</p>
