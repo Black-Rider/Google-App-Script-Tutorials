@@ -1,0 +1,17 @@
+//method for creating new sheet in a spreadsheet
+function makeNewOne() {
+  const id = '1QHoU_6eMkBf8_4G2gknNb6Ma0YBQXhkdu77dnkJkUuw';
+  const ss= SpreadsheetApp.openById(id);
+  const sheets = ss.getSheets();
+  Logger.log(sheets);
+const newName='Sheet new';
+let sheet = ss.getSheetByName(newName);
+if(sheet==null)
+{
+sheet=ss.insertSheet();
+sheet.setName(newName);
+
+}
+Logger.log(sheet.getIndex());
+
+}
