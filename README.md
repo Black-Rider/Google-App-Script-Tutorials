@@ -14,3 +14,4 @@ Appologies in Advance.
 <p>5- sheetinasheet.txt file has method for creating sheet with a spreadsheet programatically.</P>  
 <p>6- checkerboard.txt has method of printing checkerboard pattern on sheet column by selecting range or getRange()</p>
 <p>7- Multi level status change drop down menu for use of Procurement Tracker.
+<p>8- Change Log in creation for Logging changes in a speerate sheet.
