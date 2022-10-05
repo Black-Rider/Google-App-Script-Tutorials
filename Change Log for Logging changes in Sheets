@@ -1,0 +1,6 @@
+function onMyEdit(e) {
+  const sh=e.range.getSheet();
+  const excl=['Sheet2'];
+  if(~excl.indexOf(sh.getName()))return;
+  SpreadsheetApp.openById("Sheet Link").getSheetByName('Sheet2').appendRow([new Date(),Session.getActiveUser().getEmail(),e.oldValue,e.value,e.range.getA1Notation(),e.user.nickname]);
+}
