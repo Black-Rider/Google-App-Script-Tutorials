@@ -1,0 +1,81 @@
+var level1 = ['On Hold','Awaiting ETA','Awaiting Confirmation','ETA Provided'];
+function createtest2Dropdown() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var rangeRule = SpreadsheetApp.newDataValidation().requireValueInList(level1,true).build();
+  ss.getRange('B2:B').setDataValidation(rangeRule);
+}
+
+function onTest2EditTrigger(e) {
+    var sheet = e.range.getSheet();
+    var cellValue = e.range.getValue();
+    var level2 = ['Cancelled','EOL','Awaiting Payment'];
+    var level3 = ['Cancelled','EOL','Awaiting Dimensions'];
+    var level4 = ['Cancelled','EOL','Dimensions Received'];
+    var level5 = ['Cancelled','EOL','Amazon Label Created'];
+    var level6 = ['Cancelled','EOL','Amazon Labels Sent'];
+    var level7 = ['Cancelled','EOL','Pictures Received'];
+    var level8 = ['Cancelled','EOL','Awaiting Tracking','Fedex Labels Sent','DHL Labels Sent','UPS Labels Sent'];
+    var level9 = ['Cancelled','EOL','Awaiting Tracking'];
+
+  switch (cellValue)
+  {
+    case'':
+      sheet.getActiveRange().setBackground("white").setValue("");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level1, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;
+    case 'On Hold':
+    case 'Awaiting Confirmation':
+    case 'ETA Provided':
+    case 'Awaiting ETA':
+      sheet.getActiveRange().setBackground("yellow").setValue(cellValue);
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level2, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;
+    case 'Awaiting Payment':
+     sheet.getActiveRange().setBackground("orange").setValue("Awaiting Payment");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level3, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;
+    case 'Awaiting Dimensions':
+      sheet.getActiveRange().setBackground("grey").setValue("Awaiting Dimensions");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level4, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+      break;
+    case'Dimensions Received':
+      sheet.getActiveRange().setBackground("green").setValue("Dimensions Received");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level5, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;
+    case'Amazon Label Created':
+      sheet.getActiveRange().setBackground("navy").setValue("Amazon Label Created");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level6, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;
+    case'Amazon Labels Sent':
+      sheet.getActiveRange().setBackground("maroon").setValue("Amazon Labels Sent");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level7, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;
+    case'Pictures Received':
+      sheet.getActiveRange().setBackground("lime").setValue("Pictures Received");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level8, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;
+    case'Awaiting Tracking':
+      sheet.getActiveRange().setBackground("aqua").setValue("Awaiting Tracking");
+      var dataValidation = SpreadsheetApp.newDataValidation().requireValueInList(level9, true).build();
+      sheet.getActiveRange().setDataValidation(dataValidation);
+    break;    
+  }
+
+  
+
+
+
+
+}
+
+
+
+
